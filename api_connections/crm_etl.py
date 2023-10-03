@@ -226,5 +226,5 @@ try:
     cur.close()
     conn.close()
 
-except OperationalError as e:
-    print(f"The error '{e}' occurred")
+except OperationalError as error:
+    print(f"The error '{error}' occurred")
