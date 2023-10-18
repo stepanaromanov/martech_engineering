@@ -33,7 +33,6 @@ if not credentials or not credentials.valid:
 # create column names and dataframe for data that will be imported
 df_columns = [
     'Yili',
-    'month',
     'Lead id',
     'Telefon raqami',
     '0',
