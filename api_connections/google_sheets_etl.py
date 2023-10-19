@@ -223,3 +223,5 @@ try:
 
 except OperationalError as error:
     print(f"The error '{error}' occurred")
+
+print('google sheets data has been successfully extracted and loaded')

@@ -141,6 +141,12 @@ try:
             f"""
                 DELETE FROM ga_datatalim_sessions
                 WHERE week = {sessions['week'][i]} and year = {sessions['year'][i]};
+            """
+        )
+
+    for i in range(0, len(sessions)):
+        cur.execute(
+            f"""
                 INSERT INTO ga_datatalim_sessions (
                     year,
                     month,
@@ -249,10 +255,16 @@ try:
 
     for i in range(0, len(devices)):
         cur.execute(
-            #information about visitors is updated so we will delete old rows where data intersects; then we will insert new data
+            # information about visitors is updated, so we will delete old rows where data intersects; then we will insert new data
             f"""
                 DELETE FROM ga_datatalim_devices
                 WHERE week = {devices['week'][i]} and year = {devices['year'][i]};
+            """
+        )
+
+    for i in range(0, len(devices)):
+        cur.execute(
+            f"""
                 INSERT INTO ga_datatalim_devices (
                     year,
                     month,
@@ -340,10 +352,16 @@ try:
 
     for i in range(0, len(pagePaths)):
         cur.execute(
-            #information about visitors is updated so we will delete old rows where data intersects; then we will insert new data
+            # information about visitors is updated, so we will delete old rows where data intersects; then we will insert new data
             f"""
                 DELETE FROM ga_datatalim_page_paths
                 WHERE week = {pagePaths['week'][i]} and year = {pagePaths['year'][i]};
+            """
+        )
+
+    for i in range(0, len(pagePaths)):
+        cur.execute(
+            f"""
                 INSERT INTO ga_datatalim_page_paths (
                     year,
                     month,
@@ -418,10 +436,16 @@ try:
 
     for i in range(0, len(landingPages)):
         cur.execute(
-            # information about visitors is updated so we will delete old rows where data intersects; then we will insert new data
+            # information about visitors is updated, so we will delete old rows where data intersects; then we will insert new data
             f"""
                 DELETE FROM ga_datatalim_landing_pages
                 WHERE week = {landingPages['week'][i]} and year = {landingPages['year'][i]};
+            """
+        )
+
+    for i in range(0, len(landingPages)):
+        cur.execute(
+            f"""
                 INSERT INTO ga_datatalim_landing_pages (
                     year,
                     month,
@@ -439,10 +463,11 @@ try:
                 );
             """
         )
-
     conn.commit()
     cur.close()
     conn.close()
 
 except OperationalError as error:
     print(f"The error '{error}' occurred")
+
+print('google analytics 4 data has been successfully extracted and loaded')

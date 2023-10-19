@@ -228,3 +228,5 @@ try:
 
 except OperationalError as error:
     print(f"The error '{error}' occurred")
+
+print('crm data has been successfully extracted and loaded')
