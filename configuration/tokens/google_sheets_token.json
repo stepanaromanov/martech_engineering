@@ -1,0 +1,1 @@
+{"token": "XXXXXXXXX", "refresh_token": "XXXXXXXXX", "token_uri": "https://oauth2.googleapis.com/token", "client_id": "XXXXXXXXX.apps.googleusercontent.com", "client_secret": "XXXXXXXXX", "scopes": ["https://www.googleapis.com/auth/spreadsheets"], "expiry": "XXXXXXXXX"}
