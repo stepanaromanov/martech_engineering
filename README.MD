@@ -28,4 +28,14 @@ The extracted data undergoes a comprehensive data wrangling transformation using
 ### PostgreSQL Database Integration
 The transformed data is loaded into a PostgreSQL database, providing a centralized repository for easy storage, retrieval, and management of educational company information.
 
+## Logging and Backup Functionality
+
+### Logging Successful Operations and Errors
+The ETL program emphasizes clarity by utilizing the INFO logging level to track all operations. Successful operations are logged within the try block, while unsuccessful operations are recorded in the except block.
+
+### Local Backup with Timestamped Filenames
+For data integrity, the ETL program conducts local backups of extracted data. Each backup file is named with the dataframe name and the exact timestamp, aiding in easy identification and retrieval.
+
+## Visualization
+
 After that data could be processed using SQL Lab within Apache Superset. Decision makers can gain valuable insights through interactive dashboards and reports.
